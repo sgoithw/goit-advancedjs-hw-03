@@ -1,25 +1,68 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-@import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+body {
+  padding: 10px;
+}
+p {
+  margin: 0px;
+}
+.cat-info-card {
+  display: flex;
+  margin-top: 20px;
+}
+.cat-info-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.cat-info-holder {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px;
+}
+.cat-info-title {
+  margin: 0px 0px 10px;
+}
+.cat-info-text {
+  margin: 10px 0px;
+}
 
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+.loader {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  display: block;
+  z-index: 99;
+  left: calc(50% - 50px);
+  top: 100px;
+}
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+.loader:before,
+.loader:after {
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+.loader:after {
+  box-shadow: 0 2px 0 #ff3d00 inset;
+  animation: rotate 2s linear infinite;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
